@@ -1,0 +1,19 @@
+<div>
+
+    <mat-form-field>
+        <mat-label>UserName</mat-label>
+        <input matInput placeholder="UserName" placeholder="UserName" [(ngModel)]="this.newsignInUsername">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label> New Password</mat-label>
+        <input matInput placeholder="Password" [(ngModel)]="this.newsignInPassword">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Retype Password</mat-label>
+        <input matInput placeholder="Retype Password" [(ngModel)]="this.retypeSignInPassword">
+    </mat-form-field>
+
+    <button (click)="SignUp()">Sign Up</button>
+</div>
