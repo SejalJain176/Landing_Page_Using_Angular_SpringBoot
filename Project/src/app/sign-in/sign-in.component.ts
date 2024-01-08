@@ -15,21 +15,27 @@ export class SignInComponent {
     
   }
 
-  SignIn(){
-
+  SignIn() {
     this.http.post('http://localhost:8080/api/signin', {
       username: this.signInUsername,
       password: this.signInPassword,
-    }).subscribe(response => {
+    }, { responseType: 'text' }) 
+      .subscribe(response => {
+       
+        const token = response as string;
       
-      console.log('Sign In Successful');
-      
-      
-    }, error => {
-      console.error('Sign In Failed', error);
-    
-    });
+        if(token!=null){
+         alert('Sign In Successful')
+         console.log('Sign In Successful');
+         console.log('JWT Token:', token);
+        }
+       
+      }, error => {
+        alert('Sign In Failed')
+        console.error('Sign In Failed', error);
+      });
   }
+  
 
   }
 

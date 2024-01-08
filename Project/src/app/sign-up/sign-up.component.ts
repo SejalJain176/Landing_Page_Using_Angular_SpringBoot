@@ -25,7 +25,7 @@ SignUp(){
     
     
   }, error => {
-    console.error('Sign up Failed', error);
+    console.log('Sign up Failed', error);
   
   });
 }
