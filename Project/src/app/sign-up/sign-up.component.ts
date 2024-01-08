@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +12,7 @@ export class SignUpComponent {
   newsignInPassword: any;
   retypeSignInPassword:any;
 
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient,private router:Router){
     
   }
 SignUp(){
@@ -19,13 +20,18 @@ SignUp(){
   this.http.post('http://localhost:8080/api/signup', {
     username: this.newsignInUsername,
     password: this.newsignInPassword,
-  }).subscribe(response => {
+  },{ responseType: 'text' }).subscribe(response => {
     
-    console.log('Sign up Successful');
-    
+    console.log(response)
+    this.router.navigate(['sign-in'])
     
   }, error => {
+   
     console.log('Sign up Failed', error);
+    alert("Signed Up Failed!")
+
+
+    
   
   });
 }

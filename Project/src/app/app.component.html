@@ -1,25 +1,15 @@
 <div class="container">
 
   <h1>Welcome to our Landing Page</h1>
-  
-  
-
-  <div class="signIn">
-
-    <button class="buttonSignIn" (click)="openSignInModal()">Sign In</button><br>
-
+  <div class="buttonWrapper">
+    <div class="signIn">
+      <button class="buttonSignIn" (click)="openSignInModal()">Sign In</button><br>
+    </div>
+    <div class="signUp">
+      <button class="buttonSignUp" (click)="openSignUpModal()">Sign Up</button>
+    </div>  
   </div>
-  <div class="signUp">
-    <mat-label>Create Your Account </mat-label>
-    <button class="buttonSignUp" (click)="openSignUpModal()">Sign Up</button>
-  </div>
-  
-
-  <div>
-
-  </div>
-
-
 </div>
+
 
 <router-outlet></router-outlet>

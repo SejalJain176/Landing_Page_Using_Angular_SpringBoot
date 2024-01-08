@@ -1,43 +1,31 @@
 .container{
-    color: blueviolet;
-    background-color: gainsboro;
-}
-
-.signIn{
-    justify-content: end;
+    color: rgb(138, 43, 226);
     display: flex;
-    margin: 53px 53px 53px 53px;
-    
-}
-
-h1{
-    font-family: monospace;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-.buttonSignIn{
-    font-family: monospace;
-    width: 124px;
-    height: 42px;
-    color: blueviolet;
-    font-style: normal;
-    font-weight: 700;
-    cursor: pointer;
-}
-.signUp{
-    font-family: monospace;
-    color: blueviolet;
-    font-style: normal;
-    font-family: monospace;
-    font-weight: 200;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: rgb(220, 220, 220);
 }
 
-.buttonSignUp{
+
+.buttonWrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+}
+
+.buttonSignIn, .buttonSignUp{
     font-family: monospace;
     width: 124px;
-    height: 42px;
-    color: blueviolet;
-    font-style: normal;
+    border: none;
+    color: rgb(138, 43, 226);
+    border-radius: 0.5rem;
     font-weight: 700;
     cursor: pointer;
 }
+
+.buttonSignIn:hover , .buttonSignUp:hover {
+    text-decoration: underline;
+}
+

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,7 @@ export class SignInComponent {
   signInUsername="";
   signInPassword="";
  
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient,private router:Router){
     
   }
 
@@ -25,9 +26,10 @@ export class SignInComponent {
         const token = response as string;
       
         if(token!=null){
-         alert('Sign In Successful')
+        
          console.log('Sign In Successful');
          console.log('JWT Token:', token);
+         this.router.navigate(['profile'])
         }
        
       }, error => {

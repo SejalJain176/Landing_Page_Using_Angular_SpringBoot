@@ -1,17 +1,20 @@
 
-<div class="formSignIn">
+<div class="formSignInWrapper">
 
-<mat-form-field> 
-<mat-label>UserName</mat-label>  
-<input matInput placeholder="UserName" placeholder="UserName" [(ngModel)]="this.signInUsername">
-</mat-form-field>  
+<div class="form">
+    <mat-form-field> 
+        <mat-label>UserName</mat-label>  
+        <input matInput placeholder="UserName" placeholder="UserName" [(ngModel)]="this.signInUsername">
+        </mat-form-field>  
+        
+        <mat-form-field> 
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" [(ngModel)]="this.signInPassword">
+        </mat-form-field>
+        
+        <button (click)="SignIn()">Sign In</button>
+    </div>    
 
-<mat-form-field> 
-<mat-label>Password</mat-label>
-<input matInput placeholder="Password" [(ngModel)]="this.signInPassword">
-</mat-form-field>
-
-<button (click)="SignIn()">Submit</button>
 </div>
 
 

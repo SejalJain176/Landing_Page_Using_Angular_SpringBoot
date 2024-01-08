@@ -1,7 +1,16 @@
-.formSignIn{
+.formSignInWrapper{
+    width: 100vw;
     display: flex;
-    justify-content: center;
-    font-family: monospace;
-    margin: 30px 1px 1px 1px;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    border: 2px solid black;
+    width: 350px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    display: flex;    flex-direction: column;
 }
