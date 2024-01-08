@@ -1,0 +1,7 @@
+.formSignIn{
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    margin: 30px 1px 1px 1px;
+    flex-direction: column;
+}

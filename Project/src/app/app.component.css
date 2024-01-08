@@ -1,0 +1,43 @@
+.container{
+    color: blueviolet;
+    background-color: gainsboro;
+}
+
+.signIn{
+    justify-content: end;
+    display: flex;
+    margin: 53px 53px 53px 53px;
+    
+}
+
+h1{
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+}
+.buttonSignIn{
+    font-family: monospace;
+    width: 124px;
+    height: 42px;
+    color: blueviolet;
+    font-style: normal;
+    font-weight: 700;
+    cursor: pointer;
+}
+.signUp{
+    font-family: monospace;
+    color: blueviolet;
+    font-style: normal;
+    font-family: monospace;
+    font-weight: 200;
+}
+
+.buttonSignUp{
+    font-family: monospace;
+    width: 124px;
+    height: 42px;
+    color: blueviolet;
+    font-style: normal;
+    font-weight: 700;
+    cursor: pointer;
+}

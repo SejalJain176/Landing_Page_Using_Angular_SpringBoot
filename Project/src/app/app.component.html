@@ -1,19 +1,19 @@
 <div class="container">
 
-  <h2>Welcome to our Landing Page</h2>
+  <h1>Welcome to our Landing Page</h1>
   
   
 
-  <div>
+  <div class="signIn">
 
-    
+    <button class="buttonSignIn" (click)="openSignInModal()">Sign In</button><br>
 
-    
-    <button (click)="openSignInModal()">Sign In</button><br>
-
-    <mat-label>Don't have account?</mat-label>
-    <button (click)="openSignUpModal()">Sign Up</button>
   </div>
+  <div class="signUp">
+    <mat-label>Create Your Account </mat-label>
+    <button class="buttonSignUp" (click)="openSignUpModal()">Sign Up</button>
+  </div>
+  
 
   <div>
 
