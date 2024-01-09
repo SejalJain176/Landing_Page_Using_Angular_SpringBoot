@@ -14,6 +14,7 @@ export class SignInComponent {
   signInUsername="";
   signInPassword="";
   hidePassword: boolean=false;
+  signInSubscription: any;
  
   constructor(private http:HttpClient,private router:Router,private dialogRef: MatDialog ){
     
@@ -24,7 +25,7 @@ export class SignInComponent {
     if (this.signInUsername != undefined && this.signInPassword != undefined
     && this.signInUsername != "" && this.signInPassword != ""
     && this.signInUsername != null && this.signInPassword != null ){
-    this.http.post('http://localhost:8080/api/signin', {
+      this.signInSubscription = this.http.post('http://localhost:8080/api/signin', {
       username: this.signInUsername,
       password: this.signInPassword,
     }, { responseType: 'text' }) 
@@ -33,7 +34,7 @@ export class SignInComponent {
         const token = response as string;
       
         if(token!=null){
-        
+        localStorage.setItem('authToken',token)
          console.log('Sign In Successful');
          console.log('JWT Token:', token);
          this.dialogRef.open(AlertBoxComponent, {
@@ -65,5 +66,10 @@ export class SignInComponent {
     input.type = this.hidePassword ? 'password' : 'text';
   }
 
+  ngOnDestroy(){
+   if(this.signInSubscription ){
+    this.signInSubscription.unsubscribe()
+   }
+  }
   }
 

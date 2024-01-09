@@ -16,6 +16,7 @@ export class SignUpComponent {
   retypeSignInPassword: any;
   hidePassword: boolean = false;
   hidePassword1: boolean = false;
+  signUpSubscription: any;
 
   constructor(private http: HttpClient, private router: Router,private dialogRef: MatDialog) {
 
@@ -26,7 +27,7 @@ export class SignUpComponent {
       && (this.newsignInPassword != "" && this.newsignInUsername != "" && this.retypeSignInPassword != "")
       && (this.newsignInPassword != null && this.newsignInUsername != null && this.retypeSignInPassword != null)
      && (this.newsignInPassword==this.retypeSignInPassword)) {
-      this.http.post('http://localhost:8080/api/signup', {
+      this.signUpSubscription =this.http.post('http://localhost:8080/api/signup', {
         username: this.newsignInUsername,
         password: this.newsignInPassword,
       }, { responseType: 'text' }).subscribe(response => {
@@ -78,5 +79,10 @@ export class SignUpComponent {
     this.hidePassword1 = !this.hidePassword1;
     input.type = this.hidePassword1 ? 'password' : 'text';
   }
-  
+
+  ngOnDestroy(){
+    if(this.signUpSubscription){
+      this.signUpSubscription.unsubscribe()
+    }
+  }
 }
