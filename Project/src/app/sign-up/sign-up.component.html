@@ -9,12 +9,18 @@
 
     <mat-form-field>
         <mat-label> New Password</mat-label>
-        <input matInput placeholder="Password" [(ngModel)]="this.newsignInPassword">
+        <input matInput placeholder="Password" [(ngModel)]="this.newsignInPassword" #passwordInput>
+        <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInput)">
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Retype Password</mat-label>
-        <input matInput placeholder="Retype Password" [(ngModel)]="this.retypeSignInPassword">
+        <input matInput placeholder="Retype Password" [(ngModel)]="this.retypeSignInPassword" #passwordInput1>
+        <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInput1)">
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
     </mat-form-field>
 
     <button (click)="SignUp()">Sign Up</button>

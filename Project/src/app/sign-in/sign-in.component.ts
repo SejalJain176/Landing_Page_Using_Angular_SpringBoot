@@ -13,6 +13,7 @@ export class SignInComponent {
 
   signInUsername="";
   signInPassword="";
+  hidePassword: boolean=false;
  
   constructor(private http:HttpClient,private router:Router,private dialogRef: MatDialog ){
     
@@ -48,6 +49,10 @@ export class SignInComponent {
       });
   }
   
+  togglePasswordVisibility(input: HTMLInputElement): void {
+    this.hidePassword = !this.hidePassword;
+    input.type = this.hidePassword ? 'password' : 'text';
+  }
 
   }
 

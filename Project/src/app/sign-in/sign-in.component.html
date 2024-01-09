@@ -9,7 +9,10 @@
         
         <mat-form-field> 
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" [(ngModel)]="this.signInPassword">
+        <input matInput placeholder="Password" [(ngModel)]="this.signInPassword" #passwordInput>
+        <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInput)">
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
         </mat-form-field>
         
         <button (click)="SignIn()">Sign In</button>
