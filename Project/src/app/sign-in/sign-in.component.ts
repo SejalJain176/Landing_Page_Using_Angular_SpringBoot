@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AlertBoxComponent } from '../alert-box/alert-box.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,7 +14,7 @@ export class SignInComponent {
   signInUsername="";
   signInPassword="";
  
-  constructor(private http:HttpClient,private router:Router){
+  constructor(private http:HttpClient,private router:Router,private dialogRef: MatDialog ){
     
   }
 
@@ -29,12 +31,20 @@ export class SignInComponent {
         
          console.log('Sign In Successful');
          console.log('JWT Token:', token);
+         this.dialogRef.open(AlertBoxComponent, {
+          width: '300px',
+          data: { success: true, message: 'Signed In Successfully!' }
+        })
          this.router.navigate(['profile'])
         }
        
       }, error => {
-        alert('Sign In Failed')
+       
         console.error('Sign In Failed', error);
+        this.dialogRef.open(AlertBoxComponent, {
+          width: '300px',
+          data: { success: false, message: 'Signed In Failed!' }
+        })
       });
   }
   

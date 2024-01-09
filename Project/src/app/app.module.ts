@@ -10,12 +10,17 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { AlertBoxComponent } from './alert-box/alert-box.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    AlertBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,10 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatIconModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
