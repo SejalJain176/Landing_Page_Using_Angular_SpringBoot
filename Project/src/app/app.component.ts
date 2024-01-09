@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
 import { Route, Router } from '@angular/router';
+import { MatToolbar,MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-root',

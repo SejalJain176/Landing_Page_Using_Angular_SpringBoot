@@ -12,7 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { AlertBoxComponent } from './alert-box/alert-box.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenav } from '@angular/material/sidenav';
+import { MatToolbar } from '@angular/material/toolbar';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +37,9 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatIconModule
-   
+    MatIconModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

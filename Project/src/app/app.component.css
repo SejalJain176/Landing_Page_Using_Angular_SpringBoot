@@ -26,6 +26,15 @@
 }
 
 .buttonSignIn:hover , .buttonSignUp:hover {
-    text-decoration: underline;
+    opacity: 0.9;
+    
 }
 
+mat-toolbar{
+    padding: 1;
+    background-color: #424242;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
