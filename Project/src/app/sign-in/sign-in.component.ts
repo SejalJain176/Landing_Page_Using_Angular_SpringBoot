@@ -20,6 +20,10 @@ export class SignInComponent {
   }
 
   SignIn() {
+
+    if (this.signInUsername != undefined && this.signInPassword != undefined
+    && this.signInUsername != "" && this.signInPassword != ""
+    && this.signInUsername != null && this.signInPassword != null ){
     this.http.post('http://localhost:8080/api/signin', {
       username: this.signInUsername,
       password: this.signInPassword,
@@ -47,6 +51,13 @@ export class SignInComponent {
           data: { success: false, message: 'Signed In Failed!' }
         })
       });
+    } else{
+
+      this.dialogRef.open(AlertBoxComponent, {
+        width: '300px',
+        data: { success: false, message: 'Signed In Failed!' }
+      })
+    }
   }
   
   togglePasswordVisibility(input: HTMLInputElement): void {

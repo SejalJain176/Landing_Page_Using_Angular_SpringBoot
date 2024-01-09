@@ -15,7 +15,7 @@ export class SignUpComponent {
   newsignInPassword: any;
   retypeSignInPassword: any;
   hidePassword: boolean = false;
-
+  hidePassword1: boolean = false;
 
   constructor(private http: HttpClient, private router: Router,private dialogRef: MatDialog) {
 
@@ -72,6 +72,11 @@ export class SignUpComponent {
   togglePasswordVisibility(input: HTMLInputElement): void {
     this.hidePassword = !this.hidePassword;
     input.type = this.hidePassword ? 'password' : 'text';
+  }
+
+  togglePasswordVisibility1(input: HTMLInputElement): void {
+    this.hidePassword1 = !this.hidePassword1;
+    input.type = this.hidePassword1 ? 'password' : 'text';
   }
   
 }
