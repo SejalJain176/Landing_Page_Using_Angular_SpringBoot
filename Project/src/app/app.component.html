@@ -1,26 +1,45 @@
 <div class="container">
- <mat-toolbar color="primary" class="mat-elevation-z8">
-  <button>
-    <mat-icon>menu</mat-icon>
-  </button>
+  <mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <h1>Hello Learners! What do you want to learn?</h1>
-  <button>
-    <mat-icon>search</mat-icon>
-  </button>
+    <h1>Hello Learners! What do you want to learn?</h1>
+    <button>
+      <mat-icon>search</mat-icon>
+    </button>
 
-  <div class="buttonWrapper">
-    <div class="signIn">
-      <button class="buttonSignIn" (click)="openSignInModal()">Sign In</button><br>
+    <div class="buttonWrapper">
+      <div class="signIn">
+        <button class="buttonSignIn" (click)="openSignInModal()">Sign In</button><br>
+      </div>
+      <div class="signUp">
+        <button class="buttonSignUp" (click)="openSignUpModal()">Sign Up</button>
+      </div>  
     </div>
-    <div class="signUp">
-      <button class="buttonSignUp" (click)="openSignUpModal()">Sign Up</button>
-    </div>  
-  </div>
-
- </mat-toolbar>
+  </mat-toolbar>
   
 </div>
-
-
 <router-outlet></router-outlet>
+  <!-- Side Navigation -->
+  <mat-drawer-container  *ngIf="isSidenavOpen">
+    <mat-drawer style="width: 250px;"  mode="side" opened="true">
+      <!-- Your side navigation content goes here -->
+      <ng-container *ngFor="let item of navItems">
+        <mat-list-item [ngClass]="{'horizontal-item': item.horizontal}">
+          <button class="item" matbutton><mat-icon>{{ item.icon }}</mat-icon></button>
+        </mat-list-item>
+      </ng-container>
+
+     
+       
+    </mat-drawer>
+  
+    <mat-drawer-content >
+      <!-- Main content goes here -->
+     
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+ 
+  

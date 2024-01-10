@@ -11,15 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { AlertBoxComponent } from './alert-box/alert-box.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenav } from '@angular/material/sidenav';
-import { MatToolbar } from '@angular/material/toolbar';
-
 
 @NgModule({
   declarations: [
@@ -39,7 +36,9 @@ import { MatToolbar } from '@angular/material/toolbar';
     MatDialogModule,
     MatIconModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

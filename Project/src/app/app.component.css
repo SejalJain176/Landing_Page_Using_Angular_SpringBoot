@@ -30,6 +30,24 @@
     
 }
 
+.horizontal-nav-list{
+    display: flex;
+    flex-direction: row;
+}
+
+.horizontal-nav-list mat-nav-list {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .horizontal-item {
+    display: inline-block;
+    margin-right: 29px;
+    margin-bottom: 16px;
+    margin-top: 6px;
+    margin-left: 37px;
+  }
+
 mat-toolbar{
     padding: 1;
     background-color: #424242;
@@ -37,4 +55,18 @@ mat-toolbar{
     justify-content: space-between;
     
 
+}
+
+mat-drawer-container{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    /* z-index: 100; */
+    position: relative;
+    top: -229px;
+}
+
+.item:hover{
+cursor: pointer;
+background-color: whitesmoke;
 }
