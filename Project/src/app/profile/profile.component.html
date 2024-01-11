@@ -1,3 +1,16 @@
-<h1 >Profile Works!!</h1>
+<div class="course-list">
+    <mat-card *ngFor="let course of courses" class="course-card">
+      <img mat-card-image class="mat-image" [src]="'./assets/' + course.ImageUrl" alt="{{ course.Course_Name }}" />
+      <mat-card-content>
+        <h2 mat-card-title>{{ course.Course_Name }}</h2>
+        <h5 mat-card-title>{{ course.Course_Description }}</h5>
+        <p>{{ course.Course_Teacher }}</p>
+        <mat-icon>schedule</mat-icon><p>{{ course.Course_Duration }}</p>
+       
+        
+      </mat-card-content>
+    </mat-card>
+</div>
+
 
 <button matbutton (click)="signOut()">Sign Out</button>

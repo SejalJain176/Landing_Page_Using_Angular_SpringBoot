@@ -1,5 +1,6 @@
 .container{
-    color: rgb(138, 43, 226);
+   
+    color: #7b1fa2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +8,9 @@
     padding: 1rem 0;
     background-color: rgb(220, 220, 220);
 }
-
+h1{
+    font-family: cursive !important;
+}
 
 .buttonWrapper {
     display: grid;
@@ -19,7 +22,7 @@
     font-family: monospace;
     width: 124px;
     border: none;
-    color: rgb(138, 43, 226);
+    color: #7b1fa2;
     border-radius: 0.5rem;
     font-weight: 700;
     cursor: pointer;
@@ -61,12 +64,21 @@ mat-drawer-container{
     width: 250px;
     height: 250px;
     background-color: white;
-    /* z-index: 100; */
-    position: relative;
-    top: -229px;
+    position: fixed;
+    top: 111px;
+
 }
 
 .item:hover{
 cursor: pointer;
 background-color: whitesmoke;
 }
+
+  
+.label{
+    position: absolute;
+    font-family: cursive;
+}
+ mat-icon{
+    color:#7b1fa2
+ }

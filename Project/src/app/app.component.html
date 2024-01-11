@@ -22,12 +22,13 @@
 </div>
 <router-outlet></router-outlet>
   <!-- Side Navigation -->
-  <mat-drawer-container  *ngIf="isSidenavOpen">
-    <mat-drawer style="width: 250px;"  mode="side" opened="true">
+  <mat-drawer-container  *ngIf="isSidenavOpen"  [ngStyle]="{width: isSidenavOpen ? '250px' : '0px' }">
+    <mat-drawer #drawer style="width: 250px;"  mode="over" opened="true" >
       <!-- Your side navigation content goes here -->
       <ng-container *ngFor="let item of navItems">
         <mat-list-item [ngClass]="{'horizontal-item': item.horizontal}">
-          <button class="item" matbutton><mat-icon>{{ item.icon }}</mat-icon></button>
+          <button class="item" routerLink="{{item.link}}"  matbutton><mat-icon>{{ item.icon }}</mat-icon></button>
+          <div class="label" >{{ item.label }}</div>
         </mat-list-item>
       </ng-container>
 

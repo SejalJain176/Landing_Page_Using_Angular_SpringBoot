@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ExploreComponent } from './explore/explore.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     SignInComponent,
     SignUpComponent,
     ProfileComponent,
-    AlertBoxComponent
+    AlertBoxComponent,
+    ExploreComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

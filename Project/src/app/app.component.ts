@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
 import { Route, Router } from '@angular/router';
@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'Project';
 
 constructor(private router:Router){
@@ -20,14 +21,14 @@ constructor(private router:Router){
 
 }
 navItems = [
-  { label: 'Home', icon: 'home', horizontal: true },
-  { label: 'Explore', icon: 'explore', horizontal: true },
-  { label: 'Dashboard', icon: 'dashboard', horizontal: true },
-  { label: 'Home', icon: 'home', horizontal: true },
-  { label: 'Explore', icon: 'explore', horizontal: true },
-  { label: 'Dashboard', icon: 'dashboard', horizontal: true },
-  { label: 'Home', icon: 'home', horizontal: true },
-  { label: 'Explore', icon: 'explore', horizontal: true },
+  { label: 'Profile', icon: 'person', horizontal: true,link:'/sign-in' },
+  { label: 'Explore', icon: 'explore', horizontal: true,link:'explore' },
+  { label: 'Books', icon: 'books', horizontal: true ,link:'books'},
+  { label: 'Discusssions', icon: 'chat', horizontal: true , link:'discussions'},
+  { label: 'Notes', icon: 'notes', horizontal: true,link:'notes' },
+  { label: 'Help', icon: 'help', horizontal: true,link:'help' },
+  { label: 'Contact', icon: 'public', horizontal: true,link:'contact' },
+  { label: 'Instructors', icon: 'people', horizontal: true,link:'instructors' },
  
  
 ];
@@ -37,6 +38,8 @@ isSidenavOpen = false;
   // Method to toggle the side navigation
   toggleSidenav() {
     this.isSidenavOpen = !this.isSidenavOpen;
+
+    
   }
  signInUsername="";
  signInPassword="";
@@ -50,8 +53,5 @@ isSidenavOpen = false;
   this.router.navigate(['sign-up'])
  }
 
- toogleMenu(input:HTMLElement){
-  
 
- }
 }
